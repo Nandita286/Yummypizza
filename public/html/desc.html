@@ -1,0 +1,42 @@
+
+<center>
+    <table>
+        <tr>
+            <td>{{pizza.name}}</td>
+        </tr>
+        <br>
+        <br>
+        <tr>
+            <td><img ng-src="{{pizza.image}}" width="250"></td>
+        </tr>
+        <br>
+        <br>
+        <tr>
+            <td>{{pizza.description}}</td>
+        </tr>
+         <br>
+        <tr>
+            <td>&#8377{{pizza.rate}}</td>
+        </tr>
+
+</table>
+
+
+    
+    Quantity:
+     <select ng-model="user.qty" ng-click="enter()">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+
+        </select>
+   
+    <a href="#/cart">Order Now</a>
+
+    </form>
+
+</center>

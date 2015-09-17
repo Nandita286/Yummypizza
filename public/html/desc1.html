@@ -1,0 +1,68 @@
+<html ng-app="PizzaApp">
+  <head>
+    <meta charset="utf-8">
+    <title>order summary</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
+    <script>
+      var PizzaApp = angular.module('PizzaApp', ['ngRoute']);
+      PizzaApp.config(function($routeProvider) {
+        $routeProvider.
+          when('/', {
+           template:<h1>view pizza</h1>
+          }).
+           when('/ordersummary', {
+            template: 'ordersummary.html'
+            //controller: 'pizzaDetailsCtrl'
+          }).
+              otherwise({
+            redirectTo: '/'
+          });
+      });
+
+      PizzaApp.controller('pizzaCtrl', function ($scope, $http){
+        $http.get('/pizza').success(function(data) {
+          $scope.details = data;
+          console.log($scope.details);
+        });
+      });
+    </script>
+     <body>
+     <center>
+    <table>
+        <tr>
+            <td>{{pizza.name}}</td>
+        </tr>
+        <br>
+        <br>
+        <tr>
+            <td><img ng-src="{{pizza.image}}" width="250"></td>
+        </tr>
+        <br>
+        <br>
+        <tr>
+            <td>{{pizza.description}}</td>
+        </tr>
+         <br>
+        <tr>
+            <td>&#8377{{pizza.rate}}</td>
+        </tr>
+        <tr>
+          
+          <td><a href="#/ordersummary">order</a></td>
+         </tr>
+         <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+
+        </select>
+</table>
+</center>
+    <div ng-view></div>
+  </body>
+</html>
