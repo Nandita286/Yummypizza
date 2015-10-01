@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "yp",
+=======
+  "name": "myapp",
+>>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853
   "version": "0.0.0",
   "private": true,
   "scripts": {

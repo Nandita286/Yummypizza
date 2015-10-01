@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STUDENT DETAILS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $("button").click(function(){
+    	alert("ok");
+
+    $.post("/student",
+        {
+          rollno: $("#test1").val(),
+          name: $("#test2").val(),
+          marks: $("#test3").val()
+
+        },
+        function(data,status){
+            alert(data);
+        });
+    });
+});
+</script>
+</head>
+<body>
+<Center>
+<p><strong>STUDENT DETAILS</strong></p>
+<table>
+				<tr>
+					<td><input type="number" id="test1" name="rollno" placeholder="Rollno"></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" id="test2" name="Name" placeholder="Name"></td>
+				</tr>
+				<tr>
+					<td><input type="number" id="test3" name="Marks" placeholder="Marks"></td>
+				</tr>
+			</table>
+
+			<button type="button">Add Details</button>
+
+			
+</Center>
+</body>
+</html>

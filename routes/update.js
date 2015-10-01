@@ -23,8 +23,12 @@ MongoClient.connect(url, function (err, db) {
  var content=req.body;
  console.log("updated");
   console.log(content);
+<<<<<<< HEAD
  var id=new mongodb.ObjectID(content.pizzaid);
  console.log("updateid",id);
+=======
+ var id=new mongodb.ObjectID(content.Contactno);
+>>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853
 collection.update({"_id":id},{$set:{"deliverystatus":false}},function(err,result){
 	console.log(result);
 });

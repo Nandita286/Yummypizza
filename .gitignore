@@ -1,3 +1,6 @@
 /node_modules
+<<<<<<< HEAD
 /public/javascripts/node_modules
 /public/javascripts/bower_components
+=======
+>>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853

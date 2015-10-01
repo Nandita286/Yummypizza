@@ -1,8 +1,20 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+<<<<<<< HEAD
+=======
+  background-image: url("../images/food.jpg");
+>>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853
 }
 
 a {
   color: #00B7FF;
 }
+<<<<<<< HEAD
+=======
+#s
+{
+	 background: url(images/s.png) ;
+
+}
+>>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853

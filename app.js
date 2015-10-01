@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+<<<<<<< HEAD
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -12,6 +13,23 @@ var pizzaorder=require('./routes/pizzaorder');
 var pizzaview=require('./routes/pizzaview');
 var update=require('./routes/update');
 
+=======
+var mongodb = require('mongodb');
+
+
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var authenticate = require('./routes/authenticate');
+
+var student = require('./routes/student');
+
+var view = require('./routes/view');
+
+var pizza = require('./routes/pizza');
+var pizzaorder=require('./routes/pizzaorder');
+var pizzaview=require('./routes/pizzaview');
+var update=require('./routes/update');
+>>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853
 var app = express();
 
 // view engine setup
@@ -28,11 +46,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+<<<<<<< HEAD
 app.use('/pizza', pizza);
+=======
+app.use('/authenticate',authenticate);
+app.use('/student',student);
+app.use('/view',view);
+app.use('/pizza',pizza);
+>>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853
 app.use('/pizzaorder',pizzaorder);
 app.use('/pizzaview',pizzaview);
 app.use('/update',update);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

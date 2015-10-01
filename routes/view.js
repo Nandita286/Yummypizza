@@ -10,30 +10,29 @@ var url = 'mongodb://localhost:27017/mydb';
 
 // Use connect method to connect to the Server
 /* GET home page. */
-router.all('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
+  
+
+
 MongoClient.connect(url, function (err, db) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
   } else {
     //HURRAY!! We are connected. :)
     console.log('Connection established to', url);
- var collection = db.collection('pizzaorder');
- collection.find({"deliverystatus":true}).toArray(function (err, result) {
+ var collection = db.collection('student');
+ collection.find().sort({marks:-1}).toArray(function (err, result) {
       if (err) {
         console.log(err);
       } else if (result.length) {
         console.log('Found:', result);
-        res.send(result);
-        //res.render('view',{
-          //user:result
-        //});
+        //res.send(result);
+        res.render('view',{
+          user:result
+        });
       } else {
         console.log('No document(s) found with defined "find" criteria!');
-<<<<<<< HEAD
-        res.send('nothing');
-=======
         res.send("No data to display!")
->>>>>>> dcf0ca36d365d3f2ecf0a6affcf96d6807345853
       }
       //Close connection
       db.close();

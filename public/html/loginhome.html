@@ -1,0 +1,47 @@
+<style>
+  th{text-align: left;}
+</style>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+ <center>
+ <h1>Welcome Admin</h1></center>
+ <br><br>
+ <!--<ul ng-repeat="pizza in details">
+ <center>
+        <li>Customername:{{pizza.fname}}</li>
+        <br>
+        <li>Delivery address:{{pizza.add}}</li>
+        <br>
+        <li >Contactno:{{pizza.no}}</li>
+        <br>
+        <li>order<ul ng-repeat="i in pizza.order">
+        <li>Pizzaname:{{i.pname}}</li>
+         <li>Pizzarate:{{i.rate}}</li>
+          <li>Quantity:{{i.qty}}</li>
+           <li>Cost:{{i.cost}}</li>
+           </ul>
+           </li>
+              <a href="#/delivered/{{pizza._id}}">Delivered</a>
+              </center>
+           </ul>-->
+           <table class="table" style="width:100%">
+ <tr class="danger">
+ <th>Customername:</th>
+ <th>Delivery address</th>
+ <th>Contactno:</th>
+ <th>Order</th>
+ <th>Delivery status</th>
+</tr>
+<tr class="success"ng-repeat="pizza in details">
+<td>{{pizza.fname}}</td>
+<td>{{pizza.add}}</td>
+<td>{{pizza.no}}</td>
+<td><ul ng-repeat="i in pizza.order">
+        <li>Pizzaname:{{i.pname}}</li>
+         <li>Pizzarate:{{i.rate}}</li>
+          <li>Quantity:{{i.qty}}</li>
+           <li>Cost:{{i.cost}}</li>
+           </ul>
+           </td>
+           <td> <a href="#/delivered/{{pizza._id}}">Delivered</a></td>
+           </tr>
+           </table>
